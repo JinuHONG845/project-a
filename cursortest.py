@@ -3,11 +3,11 @@ from datetime import datetime
 
 st.title("My Streamlit App")
 
-# 캐릭터 이미지 URL 딕셔너리
+# 이미지 경로 설정
 character_images = {
-    "미키마우스": "https://i.imgur.com/8yYwHoJ.png",
-    "미니마우스": "https://i.imgur.com/9fJhJGe.png",
-    "도날드 덕": "https://i.imgur.com/tR3kKFV.png"
+    "미키마우스": "images/mickey.jpg",
+    "미니마우스": "images/minnie.jpg",
+    "도날드 덕": "images/donald.jpg"
 }
 
 # 디즈니 캐릭터 선택
@@ -17,7 +17,7 @@ character = st.selectbox(
 )
 
 # 선택된 캐릭터 이미지 표시
-st.image(character_images[character], width=200, caption=character)
+st.image(character_images[character], width=300, caption=character)
 
 # 현재 시간 표시
 current_time = datetime.now().strftime("%H:%M:%S")
