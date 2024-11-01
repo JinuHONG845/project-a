@@ -3,19 +3,21 @@ from datetime import datetime
 
 st.title("My Streamlit App")
 
-
-# 달력 추가
-selected_date = st.date_input(
-    "날짜를 선택하세요",
-    datetime.now(),
-)
-st.write("선택하신 날짜:", selected_date)
+# 캐릭터 이미지 URL 딕셔너리
+character_images = {
+    "미키마우스": "https://i.imgur.com/8yYwHoJ.png",
+    "미니마우스": "https://i.imgur.com/9fJhJGe.png",
+    "도날드 덕": "https://i.imgur.com/tR3kKFV.png"
+}
 
 # 디즈니 캐릭터 선택
 character = st.selectbox(
     "좋아하는 캐릭터를 선택하세요",
     ["미키마우스", "미니마우스", "도날드 덕"]
 )
+
+# 선택된 캐릭터 이미지 표시
+st.image(character_images[character], width=200, caption=character)
 
 # 현재 시간 표시
 current_time = datetime.now().strftime("%H:%M:%S")
